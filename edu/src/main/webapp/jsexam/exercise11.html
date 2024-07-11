@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+function DayInfo(name, year, month, day){
+	this.name = name;
+	this.year = year;
+	this.month = month-1;
+	this.day = day;
+	
+	this.myDays = new Date(this.year, this.month, this.day);
+	this.dayOfWeek = ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"];
+	
+	this.oneDay = 24*60*60*1000;
+	
+}
+
+DayInfo.prototype.getTotalDates = function(){
+	
+	this.birthDate = Math.floor((new Date() - this.myDays)/this.oneDay);
+
+	return `${this.name}님은 태어난지 ${this.birthDate}일 되었어요. `;
+}
+
+DayInfo.prototype.getKorDay = function(){ 
+	this.weekday = this.dayOfWeek[this.myDays.getDay()];
+	
+	return `${this.name}님은 ${this.weekday}에 태어났어요.`;
+}
+
+let p1 = new DayInfo("황망고", 2020, 1, 1);
+let p2 = new DayInfo("뽀양이", 2022, 7, 1);
+let p3 = new DayInfo("아기새들", 2024, 6, 26);
+
+writeColor(p1.getTotalDates() + p1.getKorDay(), "h3", "orange");
+writeColor(p2.getTotalDates() + p2.getKorDay(), "h3", "green");
+writeColor(p3.getTotalDates() + p3.getKorDay(), "h3", "pink");
+
+</script>
+
+</body>
+</html>

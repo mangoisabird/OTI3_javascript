@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>이벤트 모델-표준 이벤트 모델</h1>
+<hr>
+<button value = "red">빨강색</button>
+<button value = "blue">파랑색</button>
+<button value = "yellow">노랑색</button>
+<hr>
+<h3></h3>
+<script>
+
+const today = new Date();
+const month = today.getMonth() + 1; 
+const day = today.getDate();
+
+
+const words = document.getElementsByTagName("h3")[0];
+words.innerHTML = `오늘은 ${month}월 ${day}일입니다.`;
+
+
+function changeColor(e) {
+	words.style.color = e.target.value;
+}
+
+const btn = document.getElementsByTagName("button");
+btn[0].addEventListener("click", changeColor)
+btn[1].addEventListener("click", changeColor)
+btn[2].addEventListener("click", changeColor)
+</script>
+</body>
+</html>

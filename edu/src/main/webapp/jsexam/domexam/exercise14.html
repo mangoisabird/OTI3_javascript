@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1 {
+	color : yellow;
+	text-shadow : 5px 5px 5px black;
+	margin-top : 50px;
+	margin-bottom : 50px;
+
+}
+
+button {
+	border : 5px solid black;
+	background-color : white;
+	color : red;
+	font-weight : bold;
+	font-size: x-large;	
+	margin-right: 10px;
+	margin-left : 10px;
+}
+
+
+* {
+	text-align : center;
+}
+
+
+</style>
+</head>
+<body>
+<h1>이벤트 처리 실습</h1>
+<hr>
+<button value = "sun" >맑음</button>
+<button value = "cloud">흐림</button>
+<button value = "rain">비</button>
+<hr>
+<img src="../../images/1.jpg">
+<script>
+
+/*
+function updateImage(i) {
+	return function () {
+		const dom = document.querySelector("img");
+	    const imageName = ["sun.png", "cloud.png", "rain.png"]; 
+	    dom.src = "../../images/"+imageName[i];
+	}
+}
+*/
+
+const btn = document.getElementsByTagName("button");
+/*
+function updateImage(e){
+	const dom = document.querySelector("img");
+	let imgName = e.target.value;	
+    dom.src = "../../images/"+imgName+".png";
+}
+*/
+function updateImage(e){
+	const dom = document.querySelector("img");
+	let imgName = e.target.value;
+    dom.src = "../../images/"+imgName+".png";
+}
+
+for (let i in btn){
+	btn[i].addEventListener("click", updateImage);
+}
+
+</script>
+</body>
+</html>

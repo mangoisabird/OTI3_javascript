@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+function printObject(p){
+	if(typeof p !== Object ||  p === null ){
+		return;
+	}
+	
+	/*
+	const{tag,color,msg} = p;
+	if (tag && color && msg){
+		document.write(`<${tag}> style=color:${color}>`+
+			  content+"</"+tag+">`)
+	}
+	*/
+	
+	writeColor(p.msg, p.tag, p.color);
+	
+}
+
+
+function setArgs(tag, color, msg){
+	this.tag = tag;
+	this.color = color;
+	this.msg = msg;
+	
+	this.makeProterty = function(){
+		let arr = [this.tag, this.color, this.msg];
+	}
+}
+
+/*
+const data = [
+	{tag : "h1", color : "blue", msg : " 첫번째"}
+	
+];
+ 
+ */
+
+
+let p1 = new setArgs("h1", "red", "이게되는게맞나");
+let p2 = new setArgs("h2", "blue", "망고");
+let p3 = new setArgs("h3", "orange", "매일매일");
+let p4 = new setArgs("h4", "pink", "아기새");
+let p5 = new setArgs("h5", "green", "주물주물");
+
+printObject(p1);
+printObject(p2);
+printObject(p3);
+printObject(p4);
+printObject(p5);
+
+
+</script>
+</body>
+</html>

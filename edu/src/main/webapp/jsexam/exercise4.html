@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	h1 {
+		text-shadow : 5px 5px 5px blue;
+	}
+</style>
+</head>
+<body>
+
+	<hr>
+	<script>
+		var num = window.prompt("1 부터 9사이의 숫자를 한 개 입력하세요");
+		
+		
+		let red = Math.floor(Math.random()*255 + 1);
+		let blue = Math.floor(Math.random()*255 + 1);
+		let green = Math.floor(Math.random()*255 + 1);
+
+		document.writeln('<h1 style = "color: rgb(' + red + ', ' + blue +', ' + green +')"> 자바스크립트로 구현하는 구구단</h1>');
+		document.writeln("<hr>");
+		
+		function printGugudan(num){
+			document.writeln(num+" 단 입니다.");
+			document.writeln("<hr>");
+			for(let su = 1; su <= 9; su++){
+				document.writeln(num + " x " + su + " = " + num*su + "<br>");
+			}
+		}
+		
+		if(num >= 1 && num <= 9){
+			printGugudan(num);
+		} else {
+			var num = window.prompt("다시 입력하세요");
+
+			printGugudan(num);
+		}
+	</script>
+	
+</body>
+</html>

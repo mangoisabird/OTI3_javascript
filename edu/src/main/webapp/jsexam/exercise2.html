@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	h1 {
+		color : green;
+	}
+</style>
+</head>
+<body>
+	<script>
+	
+	let red = Math.floor(Math.random()*255 + 1);
+	let blue = Math.floor(Math.random()*255 + 1);
+	let green = Math.floor(Math.random()*255 + 1);
+	document.writeln('<h1 style = "color: rgb(' + red + ', ' + blue +', ' + green +')"> 자바스크립트 실습(2)</h1>');
+	document.writeln("<hr>");
+	
+	let start = parseInt((Math.random()*10)+1);
+	let end = parseInt((Math.random()*10)+11);
+	
+	let sum = 0;
+	for(let su = start; su < end; su++){
+		sum += su;
+	}
+	
+	document.writeln("<h2>"+start+" 부터 "+end+" 까지의 합은 "+sum+" 입니다."+"</h2>");
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+li {
+	list-style-type: circle;
+}
+</style>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+writeColor("자바스크립트 실습(6)", "h1", "blue");
+
+/*
+function getMaxValue(ary){
+	return Math.max(...ary); // 매개변수에 ...을 붙이면 스프레드 연산자가됨, ...배열 -> 배열이 갖고 있던 element들이 개별적인 데이터가된다
+							 // ex:	let ary = [10, 20, 30]; ...ary -> 10, 20, 30
+}
+
+function getMinValueary(ary){
+	return Math.min(...ary);
+}
+
+*/
+
+
+function getMaxValue(ary){
+	let max = ary[0];
+
+	for(var i of ary){
+		if (max < i) {
+			max = i;
+		}
+	}
+	return max;
+}
+
+function getMinValueary(ary){
+	let min = ary[0];
+
+	for(var i of ary){
+		if (min > i) {
+			min = i;
+		}
+	}
+	return min;
+}
+
+function getSum(ary){
+	let sum = 0;
+	for(var i of ary){
+		sum += i;
+	}
+	return sum;
+}
+
+function getCountOddNum(ary){
+	var count = 0;
+	for (var i of ary){
+		if (i % 2 == 1){
+			count++;
+		}
+	}
+	return count;
+}
+
+function getCountEvenNum(ary){
+	// return ary.length - getCountOddNum(ary);
+	
+	var count = 0;
+	for (var i of ary){
+		if (i % 2 == 0){
+			count++;
+		}
+	}
+	return count;	
+}
+
+var arr = [10, 5, 7, 21, 4, 8, 18];
+
+console.log(arr);
+writeColor("모든 원소의 합 : "+getSum(arr), "h2", "red");
+document.writeln("<ul>");
+write("최대값 : "+getMaxValue(arr), "li");
+write("최소값 : "+getMinValueary(arr), "li");
+write("짝수의 갯수 : "+getCountEvenNum(arr), "li");
+write("홀수의 갯수 : "+getCountOddNum(arr), "li");
+document.writeln("</ul>");
+
+</script>
+</body>
+</html>

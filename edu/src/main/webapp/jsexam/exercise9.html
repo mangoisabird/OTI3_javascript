@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body> 
+<script>
+	function printH1(content) {
+		document.write(`<h1>${content}</h1>`);
+	}
+
+	function printH4(content) {
+		document.write(`<h4>${content}</h4>`);
+	}
+	
+	
+	function apply(arr, func){
+		if(arguments.length==0 ||!Array.isArray(arr)||typeof func !== "function"){
+			console.log("아규먼트 오류")
+			return false;
+		}
+		
+		for(var e of arr){
+			func(e);
+		}
+		
+		return true;
+		
+	}
+	
+	let arr = [];
+	let data;
+	
+	
+	while(true){
+		data = window.prompt("데이터를 입력해주세요");
+		
+		if (data == null){
+			break;
+		}
+		
+		arr.push(data); 
+	}
+	
+	let randomNum = parseInt(Math.random()*10) + 1;
+	console.log(randomNum);
+	
+	let result;
+	if (randomNum==1||randomNum==4||randomNum==6){
+		result = apply(arr, printH1);
+	} else if (randomNum==3||randomNum==5||randomNum==7){
+		result = apply(arr, printH4);
+	} else if (randomNum==8||randomNum==9){
+		result = apply("ㅋㅋ", printH1);
+	} else {
+		result = apply(arr);
+	}
+	
+	/*
+	switch(randomNum) {
+		case 1:
+		case 4:
+		case 6:
+			result = apply(arr, printH1);
+			break;
+		case 3;
+		case 5;
+		case 7;
+			result = apply(arr, printH4);
+			break;
+		case 8;
+		case 9;
+			result = apply("ㅋㅋ", printH1);
+			break;
+		default:
+			result = apply(ary);
+	}
+	
+	
+	
+	*/
+	if (result) {
+		window.alert("처리 성공");
+	} else {
+		window.alert("처리 실패");
+	}
+	
+	
+	/*
+	
+		function myF(){
+		...
+		}
+		()꼭 써야하는 것은 아님
+		함수 이름만 전달
+		함수 자체가 전달됨
+		[10, 3, 20, 8, 15].sort(myF)
+	
+		var result = myF;
+	*/
+	
+</script>
+</body>
+</html>

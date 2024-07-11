@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script src="util.js"></script>
+<script>
+const weekdays = ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'];
+function getKorDay(y, m, d){
+
+	/*if(isNaN(y)||isNaN(m)||isNaN(d)) return undefined */
+	if (typeof Number(y) === 'number' && typeof Number(m) === 'number'  && typeof Number(d) === 'number' ){
+		const date = new Date(y+"-"+m+"-"+d);
+		return weekdays[date.getDay()];
+	} else {
+		return undefined; 
+	}
+	
+}
+
+var getY = window.prompt("년을 입력하세요..");
+var getM = window.prompt("월을 입력하세요..");
+var getD = window.prompt("일을 입력하세요..");
+
+if (getKorDay(getY, getM, getD) === undefined){
+	writeColor("결과 없음", "h1", "red");
+} else {
+	writeColor(getY+"년 "+ getM+"월 " + getD+"일은 " + getKorDay(getY, getM, getD)+"입니다" ,"h1","blue");
+}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<script src="util.js"></script>
+<script>
+	writeColor("자바스크립트 실습(5)", "h1", "blue");
+	hr();
+	function sum(p){
+		let sum = 0;
+		if(typeof p == "undefined"){ 
+			//!num*, undefined이 오면 false니까 !num 한것잘한것임
+			return;
+		} else {
+			for(let i = 1; i <= p; i++){
+				sum += i;
+			}
+			return sum;
+		}
+	}
+	
+	
+	
+	for (let i = 0; i < 5; i++) {
+		let num = Math.floor(Math.random() * 6);
+		/*
+		let result = num == 0 ? sum() : sum(num);
+		result == undefined && write("결과값이 없어요!!", "h3");
+		result == undefined || write(`호출 결과값 : ${result}`, "h2"); 
+		*/
+		console.log(sum(num))
+		if (num == 0) {
+			if (typeof sum() == "undefined") {
+				write("결과값이 없어요!!", "h3");
+			} else {
+				write("호출 결과값 : " + sum(), "h2");
+			}
+		} else {
+			write("호출 결과값 : " + sum(num), "h2");
+		}
+	
+	}
+
+	
+</script>
+</body>
+</html>
